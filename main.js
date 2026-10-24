@@ -3,8 +3,8 @@
   'use strict';
 
   // ---- Configuration -------------------------------------------------------
-  // Public repository that hosts this site and the release DMGs.
-  var REPO = 'ardasnturk/pilothouse-web';
+  // Public repository with the code, the release DMGs and the Homebrew cask.
+  var REPO = 'ardasnturk/pilot-house';
   // Public TestFlight link. Replace the placeholder once the beta group is live.
   var TESTFLIGHT_URL = 'https://testflight.apple.com/join/XXXXXXXX';
   // --------------------------------------------------------------------------
