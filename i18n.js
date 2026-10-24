@@ -14,7 +14,7 @@ window.PH_STRINGS = {
     'lang.label': 'Dil',
     'theme.toggle': 'Temayı değiştir',
 
-    'hero.new': '1.1\'de yeni',
+    'hero.new': '1.0 yayında',
     'hero.newText': 'Codex ve Gemini, alt ajanlar, bildirimler',
     'hero.title': 'Mac\'inizdeki kodlama ajanlarını iPhone\'unuzdan yönetin.',
     'hero.lead': 'Pilothouse, Mac\'inizde <b>Claude Code</b>, <b>Codex</b> ve <b>Gemini</b>\'yi çalıştırır ve cebinize taşır: herhangi bir proje klasöründe oturum başlatın, her yanıtı, araç çağrısını ve farkı (diff) canlı izleyin, her işlemi onaylayın ya da reddedin.',
@@ -78,7 +78,8 @@ window.PH_STRINGS = {
     'dl.ios.qrAlt': 'TestFlight bağlantısının QR kodu',
     'dl.ios.scan': 'iPhone kameranızla okutun ya da bağlantıyı cihazda açın:',
     'dl.ios.btn': 'TestFlight\'ta aç',
-    'dl.ios.soon': 'Herkese açık TestFlight bağlantısı yakında burada.',
+    'dl.ios.soon': 'iPhone uygulaması TestFlight için hazırlanıyor; herkese açık bağlantı burada yayınlanacak.',
+    'dl.ios.meanwhile': 'O zamana kadar geliştiriciler uygulamayı Xcode ile iPhone\'larına kurabilir — bkz. <a href="https://github.com/ardasnturk/pilot-house/blob/main/README.tr.md#kaynaktan-derleme">Kaynaktan derleme</a>.',
     'dl.ios.note': 'TestFlight, Apple\'ın beta uygulamaları için ücretsiz uygulamasıdır; kurulu değilse bağlantı sizi önce ona götürür.',
 
     'sec.kicker': 'Güvenlik ve gizlilik',

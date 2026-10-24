@@ -129,11 +129,11 @@
   if (TESTFLIGHT_READY) {
     tfLink.href = TESTFLIGHT_URL;
   } else {
-    tfLink.hidden = true;
-    document.getElementById('tf-soon').hidden = false;
-    qrBox.classList.add('is-placeholder');
+    // No QR for a link that does not exist yet: it would open "Beta not found".
+    document.getElementById('tf-ready').hidden = true;
+    document.getElementById('tf-unavailable').hidden = false;
   }
-  if (window.QRCode) {
+  if (TESTFLIGHT_READY && window.QRCode) {
     new window.QRCode(qrBox, {
       text: TESTFLIGHT_URL, width: 256, height: 256,
       colorDark: '#0d1b1e', colorLight: '#ffffff', correctLevel: window.QRCode.CorrectLevel.M

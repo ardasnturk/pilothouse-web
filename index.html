@@ -55,7 +55,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="pill" data-i18n="hero.new">New in 1.1</span> <span data-i18n="hero.newText">Codex &amp; Gemini, sub-agents, notifications</span></p>
+          <p class="eyebrow"><span class="pill" data-i18n="hero.new">1.0 is out</span> <span data-i18n="hero.newText">Codex &amp; Gemini, sub-agents, notifications</span></p>
           <h1 data-i18n="hero.title">Drive the coding agents on your Mac from your iPhone.</h1>
           <p class="lead" data-i18n="hero.lead">Pilothouse runs <b>Claude Code</b>, <b>Codex</b> and <b>Gemini</b> on your Mac and puts them in your pocket: start sessions in any project folder, follow every response, tool call and diff live, and approve or deny every action.</p>
           <div class="cta-row">
@@ -236,14 +236,17 @@ brew install --cask pilothouse</code></pre>
               <h3 data-i18n="dl.ios.t">Pilothouse for iPhone &amp; iPad</h3>
               <p class="muted" data-i18n="dl.ios.req">iOS / iPadOS 18 or later · via TestFlight</p>
             </div>
-            <div class="qr-row">
+            <div class="ios-soon" id="tf-unavailable" hidden>
+              <p data-i18n="dl.ios.soon">The iPhone app is being prepared for TestFlight; the public link will appear here.</p>
+              <p class="small muted" data-i18n="dl.ios.meanwhile">Until then, developers can build it onto their iPhone with Xcode — see <a href="https://github.com/ardasnturk/pilot-house#building-from-source">Building from source</a>.</p>
+            </div>
+            <div class="qr-row" id="tf-ready">
               <div class="qr" id="tf-qr" role="img" aria-label="QR code for the TestFlight link" data-i18n-attr="aria-label:dl.ios.qrAlt"></div>
               <div>
                 <p data-i18n="dl.ios.scan">Scan with your iPhone camera, or open the link on the device:</p>
                 <a class="btn btn-ghost" id="tf-link" href="#" rel="noopener">
                   <span data-i18n="dl.ios.btn">Open in TestFlight</span>
                 </a>
-                <p class="small muted" id="tf-soon" hidden data-i18n="dl.ios.soon">The public TestFlight link is coming soon.</p>
               </div>
             </div>
             <p class="small muted" data-i18n="dl.ios.note">TestFlight is Apple's free app for beta apps; if it is not installed yet, the link takes you to it first.</p>
