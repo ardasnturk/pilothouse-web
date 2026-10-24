@@ -7,9 +7,9 @@
   var REPO = 'ardasnturk/pilot-house';
   // Public TestFlight link of the iPhone and iPad app.
   var TESTFLIGHT_URL = 'https://testflight.apple.com/join/6CE4VRRE';
-  // Set to true once Apple's beta review is through and the link takes testers;
-  // until then the page says the app is coming and shows no QR code.
-  var TESTFLIGHT_READY = false;
+  // The link takes testers since Apple's beta review went through; set to false
+  // to hide the QR code and say the app is coming instead.
+  var TESTFLIGHT_READY = true;
   // --------------------------------------------------------------------------
 
   var RELEASES_URL = 'https://github.com/' + REPO + '/releases';

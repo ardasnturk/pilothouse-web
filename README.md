@@ -31,8 +31,10 @@ Both live at the top of `main.js`:
   through the GitHub Releases API and falls back to
   `https://github.com/<REPO>/releases/latest`. The Homebrew command shown on the
   page is built from it too.
-* `TESTFLIGHT_URL` — the public TestFlight link. While it is the
-  `…/join/XXXXXXXX` placeholder the page shows "coming soon" and a dimmed QR.
+* `TESTFLIGHT_URL` — the public TestFlight link; the page draws its QR code.
+  `assets/testflight-qr.png` is the same code as an image for sharing.
+* `TESTFLIGHT_READY` — `false` hides the QR code and says the iPhone app is
+  coming instead.
 
 ## Development
 
