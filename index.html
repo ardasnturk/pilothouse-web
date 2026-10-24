@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pilothouse — Drive your Mac's coding agents from your iPhone</title>
+  <meta name="description" content="Pilothouse lets you drive Claude Code, Codex and Gemini on your Mac from your iPhone or iPad. End-to-end encrypted. No server, no account, no telemetry.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f8f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1416" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Pilothouse">
+  <meta property="og:description" content="Drive Claude Code, Codex and Gemini on your Mac from your iPhone or iPad.">
+  <meta property="og:image" content="assets/icon-512.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try { var t = localStorage.getItem('ph-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Pilothouse">
+        <img src="assets/favicon.png" width="32" height="32" alt="">
+        <span>Pilothouse</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections" data-i18n-attr="aria-label:nav.label">
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#security" data-i18n="nav.security">Security</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="nav-tools">
+        <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+        </div>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch theme" data-i18n-attr="aria-label:theme.toggle">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        </button>
+        <a class="btn btn-small btn-primary nav-cta" href="#download" data-i18n="nav.download">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pill" data-i18n="hero.new">New in 1.1</span> <span data-i18n="hero.newText">Codex &amp; Gemini, sub-agents, notifications</span></p>
+          <h1 data-i18n="hero.title">Drive the coding agents on your Mac from your iPhone.</h1>
+          <p class="lead" data-i18n="hero.lead">Pilothouse runs <b>Claude Code</b>, <b>Codex</b> and <b>Gemini</b> on your Mac and puts them in your pocket: start sessions in any project folder, follow every response, tool call and diff live, and approve or deny every action.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#download">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="i-apple"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>
+              <span data-i18n="hero.ctaMac">Download for Mac</span>
+            </a>
+            <a class="btn btn-ghost" href="#iphone" data-i18n="hero.ctaPhone">Get the iPhone app</a>
+          </div>
+          <ul class="hero-facts">
+            <li data-i18n="hero.fact1">End-to-end encrypted</li>
+            <li data-i18n="hero.fact2">No server, no account</li>
+            <li data-i18n="hero.fact3">No telemetry</li>
+            <li data-i18n="hero.fact4">Free</li>
+          </ul>
+        </div>
+
+        <!-- Illustrative phone: an approval request, decorative only -->
+        <div class="hero-art" aria-hidden="true">
+          <div class="glow"></div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="ph-top">
+                <span class="ph-dot"></span>
+                <span class="ph-title">~/Projects/web-app</span>
+                <span class="ph-agent">Claude</span>
+              </div>
+              <div class="ph-msg ph-user" data-i18n="art.user">Fix the failing login test</div>
+              <div class="ph-msg ph-ai" data-i18n="art.ai">The token check compares against the wrong field. Updating it now.</div>
+              <div class="ph-tool">
+                <div class="ph-tool-head"><span class="ph-tool-name">Edit</span> src/auth/session.ts</div>
+                <pre class="ph-diff"><span class="del">-  if (token.id === user.id)</span>
+<span class="add">+  if (token.sub === user.id)</span></pre>
+              </div>
+              <div class="ph-agents">
+                <span class="ph-chip"><i class="run"></i>Task · tests</span>
+                <span class="ph-chip"><i class="ok"></i>Codex · review</span>
+              </div>
+              <div class="ph-sheet">
+                <p class="ph-sheet-title" data-i18n="art.sheet">Claude wants to run a command</p>
+                <code>npm test -- auth</code>
+                <div class="ph-sheet-btns">
+                  <span class="ph-deny" data-i18n="art.deny">Deny</span>
+                  <span class="ph-allow" data-i18n="art.allow">Allow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker" data-i18n="features.kicker">Features</p>
+          <h2 id="features-title" data-i18n="features.title">Everything the terminal shows, on the phone in your hand.</h2>
+          <p data-i18n="features.lead">A small menu bar app on the Mac starts and supervises the official command-line tools and keeps the Mac awake. The iPhone and iPad app is where you follow and steer them.</p>
+        </header>
+        <div class="grid">
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>
+            <h3 data-i18n="f.agents.t">Claude Code, Codex and Gemini</h3>
+            <p data-i18n="f.agents.d">Pick the agent when you start a chat. Pilothouse only lists the CLIs installed on your Mac, and each session shows which agent it runs.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="7" rx="2"/><rect x="13" y="13" width="8" height="7" rx="2"/></svg></div>
+            <h3 data-i18n="f.sub.t">Sub-agents in their own panes</h3>
+            <p data-i18n="f.sub.d">Running sub-agents get a live status. Tap one to open its own transcript — a sheet on iPhone, a side column on iPad.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
+            <h3 data-i18n="f.notify.t">Notifications with ntfy</h3>
+            <p data-i18n="f.notify.d">Get a ping when a turn finishes or an approval is waiting, through <a href="https://ntfy.sh" rel="noopener">ntfy</a> or your own ntfy server. By default it only says “Task finished · folder name”.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 10v6M9 13h6"/></svg></div>
+            <h3 data-i18n="f.folder.t">Any folder — or a new one</h3>
+            <p data-i18n="f.folder.d">Browse your Mac's home folder with favorites, recent folders and Git repositories marked, or create a new folder right from the phone.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+            <h3 data-i18n="f.approve.t">Approve every action</h3>
+            <p data-i18n="f.approve.d">See the diff of an edit or the command to run, then Allow, Deny or always allow it for the session. Unanswered requests are denied after 10 minutes.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+            <h3 data-i18n="f.live.t">Live transcript</h3>
+            <p data-i18n="f.live.d">Responses, thinking, tool calls, diffs and terminal output as they happen. Stop a turn like Ctrl-C; reopen any session from the last 30 days, offline too.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+            <h3 data-i18n="f.away.t">Away from home with Tailscale</h3>
+            <p data-i18n="f.away.d">Bonjour finds the Mac at home or in the office. Elsewhere, Pilothouse uses your own Tailscale network — and can set it up for you, asking before every command.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="2"/><path d="M2 19h20"/><path d="M12 8v3l2 1"/></svg></div>
+            <h3 data-i18n="f.awake.t">Keeps the Mac awake</h3>
+            <p data-i18n="f.awake.d">The display may sleep; the Mac stays reachable. Optionally stay awake with the lid closed, switched off automatically on battery.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+            <h3 data-i18n="f.demo.t">Try the Demo first</h3>
+            <p data-i18n="f.demo.d">The iPhone app includes a simulated Mac, so you can try everything before installing anything on your Mac — no account needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker" data-i18n="how.kicker">How it works</p>
+          <h2 id="how-title" data-i18n="how.title">Up and running in three steps.</h2>
+        </header>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3 data-i18n="how.s1.t">Install the Mac app</h3>
+            <p data-i18n="how.s1.d">Download the notarized DMG or use Homebrew. Pilothouse lives in the menu bar; if Claude Code is missing or not signed in, it shows a short setup guide.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3 data-i18n="how.s2.t">Install the iPhone app</h3>
+            <p data-i18n="how.s2.d">Scan the TestFlight QR code — here or in the Mac app on first launch — and install Pilothouse from TestFlight.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3 data-i18n="how.s3.t">Pair with a QR code</h3>
+            <p data-i18n="how.s3.d">On the Mac choose <b>Pair New Device…</b> and scan the code with the phone. Both screens show the same verification code — done.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker" data-i18n="dl.kicker">Download</p>
+          <h2 id="download-title" data-i18n="dl.title">Get Pilothouse.</h2>
+        </header>
+        <div class="dl-grid">
+          <div class="dl-card">
+            <div class="dl-head">
+              <h3 data-i18n="dl.mac.t">Pilothouse for Mac</h3>
+              <p class="muted" data-i18n="dl.mac.req">macOS 15 Sequoia or later · Apple silicon or Intel</p>
+            </div>
+            <a class="btn btn-primary btn-block" id="dmg-link" href="https://github.com/ardasnturk/pilothouse-web/releases/latest">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="i-dl"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg>
+              <span data-i18n="dl.mac.btn">Download for Mac</span>
+            </a>
+            <p class="dl-meta muted" id="dmg-meta" aria-live="polite"><span data-i18n="dl.mac.meta">Signed with Developer ID and notarized by Apple.</span> <span id="dmg-version"></span></p>
+            <div class="dl-label-row">
+              <p class="dl-label" data-i18n="dl.brew">Or with Homebrew:</p>
+              <button type="button" class="copy-btn" data-copy="brew-cmd" data-i18n="copy">Copy</button>
+            </div>
+            <div class="code-block">
+              <pre><code id="brew-cmd">brew tap ardasnturk/pilothouse https://github.com/ardasnturk/pilothouse-web
+brew install --cask pilothouse</code></pre>
+            </div>
+            <p class="small muted"><span data-i18n="dl.mac.cli">Needs at least one of the official CLIs, installed and signed in with your own account:</span>
+              <a href="https://docs.claude.com/en/docs/claude-code/setup" rel="noopener">Claude Code</a>,
+              <a href="https://github.com/openai/codex" rel="noopener">Codex</a>,
+              <a href="https://github.com/google-gemini/gemini-cli" rel="noopener">Gemini CLI</a>.
+            </p>
+          </div>
+
+          <div class="dl-card" id="iphone">
+            <div class="dl-head">
+              <h3 data-i18n="dl.ios.t">Pilothouse for iPhone &amp; iPad</h3>
+              <p class="muted" data-i18n="dl.ios.req">iOS / iPadOS 18 or later · via TestFlight</p>
+            </div>
+            <div class="qr-row">
+              <div class="qr" id="tf-qr" role="img" aria-label="QR code for the TestFlight link" data-i18n-attr="aria-label:dl.ios.qrAlt"></div>
+              <div>
+                <p data-i18n="dl.ios.scan">Scan with your iPhone camera, or open the link on the device:</p>
+                <a class="btn btn-ghost" id="tf-link" href="#" rel="noopener">
+                  <span data-i18n="dl.ios.btn">Open in TestFlight</span>
+                </a>
+                <p class="small muted" id="tf-soon" hidden data-i18n="dl.ios.soon">The public TestFlight link is coming soon.</p>
+              </div>
+            </div>
+            <p class="small muted" data-i18n="dl.ios.note">TestFlight is Apple's free app for beta apps; if it is not installed yet, the link takes you to it first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="section section-alt" id="security" aria-labelledby="security-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker" data-i18n="sec.kicker">Security &amp; privacy</p>
+          <h2 id="security-title" data-i18n="sec.title">Only your devices. Nothing in between.</h2>
+          <p data-i18n="sec.lead">Pilothouse never talks to Anthropic or any other AI provider and never touches your credentials: your own CLI does all the AI work, signed in with your own account. There is no server, no account and no telemetry.</p>
+        </header>
+        <div class="sec-grid">
+          <div class="sec-item">
+            <h3 data-i18n="sec.pair.t">Pairing</h3>
+            <p data-i18n="sec.pair.d">The QR code holds the Mac's public key and a one-time token, valid for 5 minutes. Only the holder of the matching private key can complete the handshake.</p>
+          </div>
+          <div class="sec-item">
+            <h3 data-i18n="sec.conn.t">Every connection</h3>
+            <p data-i18n="sec.conn.d"><code>Noise_IK_25519_ChaChaPoly_SHA256</code>: mutual authentication with pinned X25519 keys, fresh session keys, ChaCha20-Poly1305, replays rejected.</p>
+          </div>
+          <div class="sec-item">
+            <h3 data-i18n="sec.files.t">Files</h3>
+            <p data-i18n="sec.files.d">The phone can only browse and start sessions inside your home folder; paths are normalised and symlinks resolved before the check.</p>
+          </div>
+          <div class="sec-item">
+            <h3 data-i18n="sec.appr.t">Approvals</h3>
+            <p data-i18n="sec.appr.d">The CLI's own permission system stays in charge. Pilothouse forwards its prompts through a localhost-only endpoint protected by a per-session token.</p>
+          </div>
+          <div class="sec-item">
+            <h3 data-i18n="sec.cred.t">Credentials</h3>
+            <p data-i18n="sec.cred.d">Pilothouse never reads, stores or transmits your Claude login. An optional API key is kept in the Keychain.</p>
+          </div>
+          <div class="sec-item">
+            <h3 data-i18n="sec.data.t">Data</h3>
+            <p data-i18n="sec.data.d">Session logs on the Mac (mode 0600, deleted after 30 days), a cache on the phone, keys in the Keychain. Notifications are off unless you turn them on and choose the ntfy server.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap-narrow">
+        <header class="section-head">
+          <p class="kicker" data-i18n="faq.kicker">FAQ</p>
+          <h2 id="faq-title" data-i18n="faq.title">Questions &amp; answers</h2>
+        </header>
+        <div class="faq">
+          <details>
+            <summary data-i18n="faq.q1">Does Pilothouse need a Claude subscription?</summary>
+            <p data-i18n="faq.a1">It needs whatever your CLI needs — for Claude Code, a Claude account with Claude Code access or an Anthropic API key. Pilothouse itself is free.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q2">Does my code leave my Mac?</summary>
+            <p data-i18n="faq.a2">Only the way it already does with your CLI: it talks to its provider as usual. Pilothouse adds an encrypted link to <em>your</em> phone and nothing else.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q3">Why is the Mac app not on the Mac App Store?</summary>
+            <p data-i18n="faq.a3">It must run your own CLI with your shell environment and work in any of your folders, which the App Store sandbox does not allow. It is signed with Developer ID and notarized by Apple.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q4">Why TestFlight for the iPhone app?</summary>
+            <p data-i18n="faq.a4">The iPhone app is distributed through a public TestFlight link instead of the App Store. Scan the QR code, install TestFlight if iOS asks, then install Pilothouse.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q5">Can I use my phone over mobile data?</summary>
+            <p data-i18n="faq.a5">Yes, with Tailscale. Without it, the phone must be on the same network as the Mac.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q6">What happens when the phone disconnects mid-turn?</summary>
+            <p data-i18n="faq.a6">Nothing is lost. The agent keeps working on the Mac; when the phone reconnects it catches up from the session log. Permission requests wait for you (up to 10 minutes).</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q7">How do notifications work?</summary>
+            <p data-i18n="faq.a7">The Mac sends them — as native macOS notifications and, if you enable it, to an ntfy topic. Install the free ntfy app on the phone and subscribe by scanning the QR code in the Mac settings. Tapping a notification opens that session in Pilothouse.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q8">How do I uninstall?</summary>
+            <p data-i18n="faq.a8">Quit Pilothouse and delete it (or <code>brew uninstall --zap --cask pilothouse</code>). Remove <code>~/Library/Application Support/Pilothouse</code> and the “Pilothouse identity key” items in Keychain Access for a clean slate.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#top" aria-label="Pilothouse">
+          <img src="assets/favicon.png" width="28" height="28" alt="">
+          <span>Pilothouse</span>
+        </a>
+        <nav class="footer-links" aria-label="Footer" data-i18n-attr="aria-label:footer.label">
+          <a id="releases-link" href="https://github.com/ardasnturk/pilothouse-web/releases" data-i18n="footer.releases">Releases</a>
+          <a id="issues-link" href="https://github.com/ardasnturk/pilothouse-web/issues" data-i18n="footer.issues">Issues</a>
+        </nav>
+      </div>
+      <p class="notice" data-i18n="footer.notice"><b>Pilothouse works with Claude Code.</b> It is an independent project and is <b>not affiliated with, endorsed by or sponsored by Anthropic</b>. You are responsible for using Claude Code in line with <a href="https://www.anthropic.com/legal" rel="noopener">Anthropic's terms</a>.</p>
+      <p class="small muted" data-i18n="footer.tm">“Claude” and “Claude Code” are trademarks of Anthropic, PBC; “Codex” of OpenAI; “Gemini” of Google LLC; “Tailscale” of Tailscale Inc. — used here only to describe compatibility. Pilothouse is not affiliated with any of them.</p>
+      <p class="small muted">© 2026 Arda Şentürk · <span data-i18n="footer.notrack">This site uses no cookies and no analytics.</span></p>
+    </div>
+  </footer>
+
+  <script src="vendor/qrcode.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

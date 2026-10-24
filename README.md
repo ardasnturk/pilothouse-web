@@ -1,0 +1,58 @@
+# Pilothouse website
+
+Landing page and downloads for **Pilothouse**, which drives Claude Code, Codex
+and Gemini on your Mac from your iPhone or iPad. English and Turkish.
+
+Plain HTML, CSS and a little vanilla JS: no build step, no cookies, no
+analytics, system fonts only. The QR code library (`vendor/qrcode.min.js`,
+[qrcodejs](https://github.com/davidshimjs/qrcodejs) 1.0.0, MIT) is vendored, so
+the only third-party request is the GitHub Releases API call that finds the
+latest DMG.
+
+| File | |
+|---|---|
+| `index.html` | Page and English copy |
+| `i18n.js` | Turkish copy (keys match `data-i18n` in `index.html`) |
+| `main.js` | Language and theme switch, latest DMG, TestFlight QR, copy buttons |
+| `styles.css` | Styles, light and dark |
+| `assets/` | Icons, generated from the app repository |
+
+The page accepts `?lang=en` or `?lang=tr`; without it the saved choice, then
+the browser language is used.
+
+## Settings
+
+Both live at the top of `main.js`:
+
+* `REPO` — this repository (`ardasnturk/pilothouse-web`), which also holds the
+  Mac release DMGs. The download button resolves the newest `.dmg` asset
+  through the GitHub Releases API and falls back to
+  `https://github.com/<REPO>/releases/latest`. The Homebrew command shown on the
+  page is built from it too.
+* `TESTFLIGHT_URL` — the public TestFlight link. While it is the
+  `…/join/XXXXXXXX` placeholder the page shows "coming soon" and a dimmed QR.
+
+## Development
+
+```bash
+python3 -m http.server 8000
+```
+
+Open <http://localhost:8000>.
+
+The icons come from the app repository (`docs/icon.png`) — never edit them here:
+
+```bash
+scripts/sync-from-app.sh   # expects the app at ../pilot-house, or PILOTHOUSE_APP=/path/to/pilot-house
+```
+
+## Publishing with GitHub Pages
+
+1. Push this repository to `ardasnturk/pilothouse-web` (public).
+2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from
+   a branch**, branch **main**, folder **/ (root)** → **Save**.
+3. The site appears at `https://ardasnturk.github.io/pilothouse-web/` within a
+   minute or two. For a custom domain, add it under **Pages → Custom domain**
+   (GitHub commits a `CNAME` file).
+
+`.nojekyll` makes Pages serve the files as they are.
