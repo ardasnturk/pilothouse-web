@@ -5,11 +5,13 @@
   // ---- Configuration -------------------------------------------------------
   // Public repository with the code, the release DMGs and the Homebrew cask.
   var REPO = 'ardasnturk/pilot-house';
-  // Public TestFlight link. Replace the placeholder once the beta group is live.
-  var TESTFLIGHT_URL = 'https://testflight.apple.com/join/XXXXXXXX';
+  // Public TestFlight link of the iPhone and iPad app.
+  var TESTFLIGHT_URL = 'https://testflight.apple.com/join/6CE4VRRE';
+  // Set to true once Apple's beta review is through and the link takes testers;
+  // until then the page says the app is coming and shows no QR code.
+  var TESTFLIGHT_READY = false;
   // --------------------------------------------------------------------------
 
-  var TESTFLIGHT_READY = !/X{8}$/.test(TESTFLIGHT_URL);
   var RELEASES_URL = 'https://github.com/' + REPO + '/releases';
 
   var store = {

@@ -55,8 +55,8 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="pill" data-i18n="hero.new">1.0 is out</span> <span data-i18n="hero.newText">Codex &amp; Gemini, sub-agents, notifications</span></p>
-          <h1 data-i18n="hero.title">Drive the coding agents on your Mac from your iPhone.</h1>
+          <p class="eyebrow"><span class="pill" data-i18n="hero.new">1.1 is here</span> <span data-i18n="hero.newText">New design, photos &amp; videos, ten languages</span></p>
+          <h1 data-i18n="hero.title">Drive the coding agents on your Mac <span class="grad-text">from your iPhone.</span></h1>
           <p class="lead" data-i18n="hero.lead">Pilothouse runs <b>Claude Code</b>, <b>Codex</b> and <b>Gemini</b> on your Mac and puts them in your pocket: start sessions in any project folder, follow every response, tool call and diff live, and approve or deny every action.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#download">
@@ -73,37 +73,11 @@
           </ul>
         </div>
 
-        <!-- Illustrative phone: an approval request, decorative only -->
-        <div class="hero-art" aria-hidden="true">
-          <div class="glow"></div>
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="ph-top">
-                <span class="ph-dot"></span>
-                <span class="ph-title">~/Projects/web-app</span>
-                <span class="ph-agent">Claude</span>
-              </div>
-              <div class="ph-msg ph-user" data-i18n="art.user">Fix the failing login test</div>
-              <div class="ph-msg ph-ai" data-i18n="art.ai">The token check compares against the wrong field. Updating it now.</div>
-              <div class="ph-tool">
-                <div class="ph-tool-head"><span class="ph-tool-name">Edit</span> src/auth/session.ts</div>
-                <pre class="ph-diff"><span class="del">-  if (token.id === user.id)</span>
-<span class="add">+  if (token.sub === user.id)</span></pre>
-              </div>
-              <div class="ph-agents">
-                <span class="ph-chip"><i class="run"></i>Task · tests</span>
-                <span class="ph-chip"><i class="ok"></i>Codex · review</span>
-              </div>
-              <div class="ph-sheet">
-                <p class="ph-sheet-title" data-i18n="art.sheet">Claude wants to run a command</p>
-                <code>npm test -- auth</code>
-                <div class="ph-sheet-btns">
-                  <span class="ph-deny" data-i18n="art.deny">Deny</span>
-                  <span class="ph-allow" data-i18n="art.allow">Allow</span>
-                </div>
-              </div>
-            </div>
+        <!-- Screenshots of the iPhone app (demo Mac) -->
+        <div class="hero-art">
+          <div class="shots">
+            <figure class="shot shot-back"><img src="assets/shot-home.png" width="603" height="1311" alt="Pilothouse on iPhone: the chats on your Mac and this week's summary" data-i18n-attr="alt:art.homeAlt"></figure>
+            <figure class="shot shot-front"><img src="assets/shot-chat.png" width="603" height="1311" alt="A chat with Claude Code: the reply, tool calls and the message field" data-i18n-attr="alt:art.chatAlt"></figure>
           </div>
         </div>
       </div>
@@ -115,32 +89,49 @@
         <header class="section-head">
           <p class="kicker" data-i18n="features.kicker">Features</p>
           <h2 id="features-title" data-i18n="features.title">Everything the terminal shows, on the phone in your hand.</h2>
-          <p data-i18n="features.lead">A small menu bar app on the Mac starts and supervises the official command-line tools and keeps the Mac awake. The iPhone and iPad app is where you follow and steer them.</p>
+          <p data-i18n="features.lead">A small menu bar app on the Mac starts and supervises the official command-line tools, keeps the Mac awake and lets you pick any project folder. The iPhone and iPad app is where you follow and steer them.</p>
         </header>
         <div class="grid">
           <article class="card card-new">
-            <span class="badge" data-i18n="badge.new">New</span>
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.7 1.5-1.5 0-1.2-1-1.5-1-2.5s.8-1.5 2-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8.5-9-8.5z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></div>
+            <h3 data-i18n="f.design.t">A fresh design</h3>
+            <p data-i18n="f.design.d">A brand-new look on iPhone, iPad and Mac. Tool calls, diffs and thinking open in sheets; what the agent is doing shows right inside the message field, with Stop where Send was.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/></svg></div>
+            <h3 data-i18n="f.media.t">Photos and videos</h3>
+            <p data-i18n="f.media.d">Attach photos from your library or the camera. Videos are sent as a few frames, so your agent can see what you mean.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h4l2-8 4 12 2-6h4"/></svg></div>
+            <h3 data-i18n="f.models.t">Real models and effort</h3>
+            <p data-i18n="f.models.d">Model names and effort levels come straight from Claude Code and Codex on your Mac — always the ones your CLI offers. Change them per chat.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 20h14"/></svg></div>
+            <h3 data-i18n="f.updates.t">Updates in the Mac app</h3>
+            <p data-i18n="f.updates.d">Pilothouse checks GitHub once a day. Install and Relaunch verifies the checksum, Apple notarization and signature before replacing itself.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+            <h3 data-i18n="f.langs.t">Ten languages</h3>
+            <p data-i18n="f.langs.d">English, Türkçe, Deutsch, Español, Français, Italiano, Português, 日本語, 한국어 and 简体中文 — following your device.</p>
+          </article>
+          <article class="card card-new">
+            <span class="badge" data-i18n="badge.new">New in 1.1</span>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></svg></div>
+            <h3 data-i18n="f.local.t">Local network first</h3>
+            <p data-i18n="f.local.d">At home Pilothouse talks to your Mac directly over Wi-Fi — nothing else to set up. Tailscale is optional, only for when you are away.</p>
+          </article>
+          <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>
             <h3 data-i18n="f.agents.t">Claude Code, Codex and Gemini</h3>
             <p data-i18n="f.agents.d">Pick the agent when you start a chat. Pilothouse only lists the CLIs installed on your Mac, and each session shows which agent it runs.</p>
-          </article>
-          <article class="card card-new">
-            <span class="badge" data-i18n="badge.new">New</span>
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="7" rx="2"/><rect x="13" y="13" width="8" height="7" rx="2"/></svg></div>
-            <h3 data-i18n="f.sub.t">Sub-agents in their own panes</h3>
-            <p data-i18n="f.sub.d">Running sub-agents get a live status. Tap one to open its own transcript — a sheet on iPhone, a side column on iPad.</p>
-          </article>
-          <article class="card card-new">
-            <span class="badge" data-i18n="badge.new">New</span>
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
-            <h3 data-i18n="f.notify.t">Notifications with ntfy</h3>
-            <p data-i18n="f.notify.d">Get a ping when a turn finishes or an approval is waiting, through <a href="https://ntfy.sh" rel="noopener">ntfy</a> or your own ntfy server. By default it only says “Task finished · folder name”.</p>
-          </article>
-          <article class="card card-new">
-            <span class="badge" data-i18n="badge.new">New</span>
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 10v6M9 13h6"/></svg></div>
-            <h3 data-i18n="f.folder.t">Any folder — or a new one</h3>
-            <p data-i18n="f.folder.d">Browse your Mac's home folder with favorites, recent folders and Git repositories marked, or create a new folder right from the phone.</p>
           </article>
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
@@ -150,17 +141,17 @@
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
             <h3 data-i18n="f.live.t">Live transcript</h3>
-            <p data-i18n="f.live.d">Responses, thinking, tool calls, diffs and terminal output as they happen. Stop a turn like Ctrl-C; reopen any session from the last 30 days, offline too.</p>
+            <p data-i18n="f.live.d">Responses, tool calls, diffs and terminal output as they happen. Reopen any chat from the last 30 days, offline too.</p>
           </article>
           <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
-            <h3 data-i18n="f.away.t">Away from home with Tailscale</h3>
-            <p data-i18n="f.away.d">Bonjour finds the Mac at home or in the office. Elsewhere, Pilothouse uses your own Tailscale network — and can set it up for you, asking before every command.</p>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="7" rx="2"/><rect x="13" y="13" width="8" height="7" rx="2"/></svg></div>
+            <h3 data-i18n="f.sub.t">Sub-agents in their own panes</h3>
+            <p data-i18n="f.sub.d">Claude can hand tasks to Codex or Gemini. Follow every sub-agent live in its own transcript and approve its actions.</p>
           </article>
           <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="2"/><path d="M2 19h20"/><path d="M12 8v3l2 1"/></svg></div>
-            <h3 data-i18n="f.awake.t">Keeps the Mac awake</h3>
-            <p data-i18n="f.awake.d">The display may sleep; the Mac stays reachable. Optionally stay awake with the lid closed, switched off automatically on battery.</p>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></div>
+            <h3 data-i18n="f.notify.t">Notifications with ntfy</h3>
+            <p data-i18n="f.notify.d">Get a ping when a turn finishes or an approval is waiting, through <a href="https://ntfy.sh" rel="noopener">ntfy</a> or your own server. By default it only says “Task finished · folder name”.</p>
           </article>
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
@@ -182,17 +173,17 @@
           <li class="step">
             <span class="step-num">1</span>
             <h3 data-i18n="how.s1.t">Install the Mac app</h3>
-            <p data-i18n="how.s1.d">Download the notarized DMG or use Homebrew. Pilothouse lives in the menu bar; if Claude Code is missing or not signed in, it shows a short setup guide.</p>
+            <p data-i18n="how.s1.d">Download the notarized DMG, drag Pilothouse to Applications and open it. A helm icon appears in the menu bar; if Claude Code is missing or not signed in, it shows what to do.</p>
           </li>
           <li class="step">
             <span class="step-num">2</span>
             <h3 data-i18n="how.s2.t">Install the iPhone app</h3>
-            <p data-i18n="how.s2.d">Scan the TestFlight QR code — here or in the Mac app on first launch — and install Pilothouse from TestFlight.</p>
+            <p data-i18n="how.s2.d">Install Pilothouse on your iPhone or iPad through TestFlight (see below). No Mac yet? Try the Demo inside the app.</p>
           </li>
           <li class="step">
             <span class="step-num">3</span>
-            <h3 data-i18n="how.s3.t">Pair with a QR code</h3>
-            <p data-i18n="how.s3.d">On the Mac choose <b>Pair New Device…</b> and scan the code with the phone. Both screens show the same verification code — done.</p>
+            <h3 data-i18n="how.s3.t">Pair on the same Wi-Fi</h3>
+            <p data-i18n="how.s3.d">Click the helm icon, choose <b>Pair iPhone or iPad…</b> and scan the code with the phone. Allow Local Network when iOS asks. Both screens show the same verification code — done.</p>
           </li>
         </ol>
       </div>
@@ -237,7 +228,7 @@ brew install --cask pilothouse</code></pre>
               <p class="muted" data-i18n="dl.ios.req">iOS / iPadOS 18 or later · via TestFlight</p>
             </div>
             <div class="ios-soon" id="tf-unavailable" hidden>
-              <p data-i18n="dl.ios.soon">The iPhone app is being prepared for TestFlight; the public link will appear here.</p>
+              <p data-i18n="dl.ios.soon">The iPhone app is waiting for Apple’s beta review. As soon as TestFlight accepts testers, the link and QR code appear here.</p>
               <p class="small muted" data-i18n="dl.ios.meanwhile">Until then, developers can build it onto their iPhone with Xcode — see <a href="https://github.com/ardasnturk/pilot-house#building-from-source">Building from source</a>.</p>
             </div>
             <div class="qr-row" id="tf-ready">
@@ -301,6 +292,10 @@ brew install --cask pilothouse</code></pre>
         </header>
         <div class="faq">
           <details>
+            <summary data-i18n="faq.q0">The phone says “Offline” at home. What now?</summary>
+            <p data-i18n="faq.a0">Check that Pilothouse is running on the Mac (helm icon in the menu bar), that both devices are on the same Wi-Fi — guest networks often keep devices apart — and that Local Network is on for Pilothouse in iOS Settings → Privacy &amp; Security.</p>
+          </details>
+          <details>
             <summary data-i18n="faq.q1">Does Pilothouse need a Claude subscription?</summary>
             <p data-i18n="faq.a1">It needs whatever your CLI needs — for Claude Code, a Claude account with Claude Code access or an Anthropic API key. Pilothouse itself is free.</p>
           </details>
@@ -318,7 +313,7 @@ brew install --cask pilothouse</code></pre>
           </details>
           <details>
             <summary data-i18n="faq.q5">Can I use my phone over mobile data?</summary>
-            <p data-i18n="faq.a5">Yes, with Tailscale. Without it, the phone must be on the same network as the Mac.</p>
+            <p data-i18n="faq.a5">Yes, with Tailscale, a free private network between your devices: install it on the Mac and the iPhone, then turn on “Use Tailscale when away” in Pilothouse's settings. At home the phone still connects over Wi-Fi first.</p>
           </details>
           <details>
             <summary data-i18n="faq.q6">What happens when the phone disconnects mid-turn?</summary>
