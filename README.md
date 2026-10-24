@@ -3,6 +3,8 @@
 Landing page and downloads for **Pilothouse**, which drives Claude Code, Codex
 and Gemini on your Mac from your iPhone or iPad. English and Turkish.
 
+Live at **https://pilot.ardasnturk.com**
+
 Plain HTML, CSS and a little vanilla JS: no build step, no cookies, no
 analytics, system fonts only. The QR code library (`vendor/qrcode.min.js`,
 [qrcodejs](https://github.com/davidshimjs/qrcodejs) 1.0.0, MIT) is vendored, so
@@ -51,8 +53,7 @@ scripts/sync-from-app.sh   # expects the app at ../pilot-house, or PILOTHOUSE_AP
 1. Push this repository to `ardasnturk/pilothouse-web` (public).
 2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from
    a branch**, branch **main**, folder **/ (root)** → **Save**.
-3. The site appears at `https://ardasnturk.github.io/pilothouse-web/` within a
-   minute or two. For a custom domain, add it under **Pages → Custom domain**
-   (GitHub commits a `CNAME` file).
+3. Custom domain: **pilot.ardasnturk.com** (Pages → Custom domain; the `CNAME`
+   file in this repo). Keep **Enforce HTTPS** on.
 
 `.nojekyll` makes Pages serve the files as they are.
