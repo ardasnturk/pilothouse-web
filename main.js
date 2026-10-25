@@ -1,10 +1,10 @@
-// Pilothouse website — language, theme, latest DMG, TestFlight QR, copy buttons.
+// Remote Code website — language, theme, latest DMG, TestFlight QR, copy buttons.
 (function () {
   'use strict';
 
   // ---- Configuration -------------------------------------------------------
   // Public repository with the code, the release DMGs and the Homebrew cask.
-  var REPO = 'ardasnturk/pilot-house';
+  var REPO = 'ardasnturk/remote-code';
   // Public TestFlight link of the iPhone and iPad app.
   var TESTFLIGHT_URL = 'https://testflight.apple.com/join/6CE4VRRE';
   // The link takes testers since Apple's beta review went through; set to false
@@ -97,8 +97,8 @@
   document.getElementById('releases-link').href = RELEASES_URL;
   document.getElementById('issues-link').href = 'https://github.com/' + REPO + '/issues';
   document.getElementById('brew-cmd').textContent =
-    'brew tap ' + REPO.split('/')[0] + '/pilothouse https://github.com/' + REPO + '\n' +
-    'brew install --cask pilothouse';
+    'brew tap ' + REPO.split('/')[0] + '/remote-code https://github.com/' + REPO + '\n' +
+    'brew install --cask remote-code';
 
   // ---- Latest DMG ----------------------------------------------------------
   var dmgLink = document.getElementById('dmg-link');
@@ -115,7 +115,9 @@
     fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (rel) {
-        var dmg = (rel.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name); })[0];
+        // RemoteCode-<version>.dmg; Pilothouse-<version>.dmg is only for old updaters.
+        var dmgs = (rel.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name); });
+        var dmg = dmgs.filter(function (a) { return /^RemoteCode-/.test(a.name); })[0] || dmgs[0];
         if (!dmg) return;
         dmgLink.href = dmg.browser_download_url;
         heroMac.href = dmg.browser_download_url;

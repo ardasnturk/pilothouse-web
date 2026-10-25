@@ -1,9 +1,9 @@
-# Pilothouse website
+# Remote Code website
 
-Landing page and downloads for **Pilothouse**, which drives Claude Code, Codex
+Landing page and downloads for **Remote Code**, which drives Claude Code, Codex
 and Gemini on your Mac from your iPhone or iPad. English and Turkish.
 
-Live at **https://pilot.ardasnturk.com**
+Live at **https://rcode.ardasnturk.com**
 
 Plain HTML, CSS and a little vanilla JS: no build step, no cookies, no
 analytics, system fonts only. The QR code library (`vendor/qrcode.min.js`,
@@ -26,7 +26,7 @@ the browser language is used.
 
 Both live at the top of `main.js`:
 
-* `REPO` — this repository (`ardasnturk/pilothouse-web`), which also holds the
+* `REPO` — the app repository (`ardasnturk/remote-code`), which also holds the
   Mac release DMGs. The download button resolves the newest `.dmg` asset
   through the GitHub Releases API and falls back to
   `https://github.com/<REPO>/releases/latest`. The Homebrew command shown on the
@@ -55,7 +55,7 @@ scripts/sync-from-app.sh   # expects the app at ../pilot-house, or PILOTHOUSE_AP
 1. Push this repository to `ardasnturk/pilothouse-web` (public).
 2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from
    a branch**, branch **main**, folder **/ (root)** → **Save**.
-3. Custom domain: **pilot.ardasnturk.com** (Pages → Custom domain; the `CNAME`
+3. Custom domain: **rcode.ardasnturk.com** (Pages → Custom domain; the `CNAME`
    file in this repo). Keep **Enforce HTTPS** on.
 
 `.nojekyll` makes Pages serve the files as they are.
