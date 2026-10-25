@@ -47,12 +47,12 @@ Open <http://localhost:8000>.
 The icons come from the app repository (`docs/icon.png`) — never edit them here:
 
 ```bash
-scripts/sync-from-app.sh   # expects the app at ../pilot-house, or PILOTHOUSE_APP=/path/to/pilot-house
+scripts/sync-from-app.sh   # expects the app at ../remote-code, or REMOTECODE_APP=/path/to/remote-code
 ```
 
 ## Publishing with GitHub Pages
 
-1. Push this repository to `ardasnturk/pilothouse-web` (public).
+1. Push this repository to `ardasnturk/remote-code-web` (public).
 2. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from
    a branch**, branch **main**, folder **/ (root)** → **Save**.
 3. Custom domain: **rcode.ardasnturk.com** (Pages → Custom domain; the `CNAME`

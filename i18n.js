@@ -15,7 +15,7 @@ window.PH_STRINGS = {
     'theme.toggle': 'Temayı değiştir',
 
     'hero.new': '1.2 yayında',
-    'hero.newText': 'Pilothouse artık Remote Code',
+    'hero.newText': 'Yeni ad, yeni simge',
     'hero.title': 'Mac\'inizdeki kodlama ajanlarını <span class="grad-text">iPhone\'unuzdan yönetin.</span>',
     'hero.lead': 'Remote Code, Mac\'inizde <b>Claude Code</b>, <b>Codex</b> ve <b>Gemini</b>\'yi çalıştırır ve cebinize taşır: herhangi bir proje klasöründe oturum başlatın, her yanıtı, araç çağrısını ve farkı (diff) canlı izleyin, her işlemi onaylayın ya da reddedin.',
     'hero.ctaMac': 'Mac için indir',

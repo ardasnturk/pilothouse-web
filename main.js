@@ -115,9 +115,7 @@
     fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (rel) {
-        // RemoteCode-<version>.dmg; Pilothouse-<version>.dmg is only for old updaters.
-        var dmgs = (rel.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name); });
-        var dmg = dmgs.filter(function (a) { return /^RemoteCode-/.test(a.name); })[0] || dmgs[0];
+        var dmg = (rel.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name); })[0];
         if (!dmg) return;
         dmgLink.href = dmg.browser_download_url;
         heroMac.href = dmg.browser_download_url;
